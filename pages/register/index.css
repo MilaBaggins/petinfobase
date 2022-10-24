@@ -1,0 +1,120 @@
+.main {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+#registrationSection {
+    color: var(--gray100);
+}
+
+#card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 500px;
+    width: 300px;
+    padding: 23px;
+    border-radius: 4px;
+    outline: solid 2px;
+    outline-color: var(--gray600);
+}
+
+.h3BacktoLogin {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.h3registration{
+    color: var(--gray100);
+    font-weight: 600;
+}
+
+label {
+    font-size: 12.5px;
+    margin-bottom: 10px;
+    font-family: 'Inter', sans-serif;
+    color: var(--gray100);
+}
+
+input {
+    padding: 10px 10px 10px 10px;
+    border-radius: 4px;
+    outline: none;
+    border: solid 2px;
+    border-color: var(--gray600);
+    background-color: var(--gray700);
+    margin-bottom: 25px;
+}
+
+::placeholder {
+    font-family: 'Inter', sans-serif;
+    color: var(--gray400);
+}
+
+#logoImgInfo {
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    padding: 20px;
+    width: 320px;
+    justify-content: space-between;
+}
+
+
+.divImgContainer {
+    display: flex;
+    gap: 15px;
+    max-width: 100%;
+    object-fit: cover;
+}
+
+.pInfo {
+    font-size: 13.5px;
+    line-height: 23px;
+    color: var(--gray100);
+}
+
+.ImgsDiv3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 100%;
+    object-fit: cover;
+}
+
+.ImgsDIv2 {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.h1PetInfo {
+    color: var(--gray100);
+    font-weight: 600;
+}
+
+.h2Oba {
+    color: var(--brand100);
+    font-weight: 600;
+}
+
+.loading{
+    width: 12px;
+    animation: spinner 1s infinite linear;
+}
+
+@keyframes spinner {
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}

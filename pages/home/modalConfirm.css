@@ -1,0 +1,25 @@
+.modalDiv4{
+    padding: 25px;
+    min-width: 610px;
+    min-height: 255px;
+    position: fixed;
+    border-radius: 4px;
+    position: absolute;
+    background-color: var(--color-white);
+}
+
+.h4ConfirmModal{
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.pConfirmModal{
+    font-size: 14px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.divEditDeleteModal{
+    display: flex;
+    justify-content: flex-start;
+}

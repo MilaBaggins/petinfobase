@@ -1,0 +1,64 @@
+#blackImg {
+    border-radius: 0%;
+    height: 100vh;
+    width: 100vw;
+    opacity: 60%;
+    position: fixed;
+    top: 0px;
+}
+
+#modalHome {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+    background-color: aqua;
+}
+
+.modalDiv {
+    padding: 25px;
+    min-width: 610px;
+    min-height: 300px;
+    position: fixed;
+    border-radius: 4px;
+    position: absolute;
+    background-color: var(--color-white);
+}
+
+
+.profileModal img {
+    width: 32px;
+    height: 32px;
+}
+
+.dateModal{
+    width: 67%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.infoFeed{
+    margin-bottom: 25px;
+    max-height: 100%;
+}
+
+#h3TitlePostModal{
+   margin-bottom: 15px;
+   line-height: 30px;
+}
+
+#pContentPostModal{
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.modalDiv2 {
+    padding: 25px;
+    min-width: 610px;
+    min-height: 300px;
+    position: fixed;
+    border-radius: 4px;
+    position: absolute;
+    background-color: var(--color-white);
+}
+

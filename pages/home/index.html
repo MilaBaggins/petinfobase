@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../home/index.css">
+    <link rel="stylesheet" href="../home/modal.css">
+    <link rel="stylesheet" href="../home/modalEdit.css">
+    <link rel="stylesheet" href="../home/modalCreate.css">
+    <link rel="stylesheet" href="../home/modalConfirm.css">
+    <link rel="stylesheet" href="../../styles/globalStyles.css">
+    <link rel="stylesheet" href="../../styles/button.css">
+    <title>Petinfo - Home</title>
+</head>
+
+<body>
+
+    <section id="modalHome">
+    </section>
+
+    <header class="headerDiv container">
+        <h1 class="h1PetFeed">Petinfo</h1>
+        <div id="headerButtonImg">
+            <button class="button-blue-large" id="createPostButton">Criar publicação</button>
+            <img src="../../assets/img/user1.svg" alt="">
+        </div>
+    </header>
+
+    <div class="h3FeedDiv">
+        <h3 class="h3Feed" id="h3FeedId">Feed</h3>
+    </div>
+
+    <main class="mainFeed container">
+
+        <section id="section-posts">
+        </section>
+
+    </main>
+
+    <script src="../../scripts/api.js"></script>
+    <script src="../home/index.js"></script>
+</body>
+
+</html>

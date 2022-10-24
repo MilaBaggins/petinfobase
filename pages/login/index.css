@@ -1,1 +1,74 @@
-/* Desenvolva a estilização da sua página aqui */
+#cardLogin{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 480px;
+    width: 300px;
+    padding: 23px;
+    border-radius: 4px;
+    outline: solid 2px;
+    outline-color: var(--gray600);
+}
+
+#logoImgInfo{
+    height: 430px;
+}
+
+.h2text{
+    color: var(--gray100);
+    line-height: 30px;
+    font-weight: 500;
+}
+
+span{
+    color: var(--brand200);
+}
+
+.divImgContainer {
+    display: flex;
+    gap: 15px;
+    max-width: 100%;
+    object-fit: cover;
+    height: 200px;
+}
+
+.ImgsDiv3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 90%;
+    object-fit: cover;
+}
+
+.divPLogin{
+    text-align: center;
+}
+
+#pDontHaveAnAcount{
+    font-size: 12px;
+}
+
+.divPLogin{
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#pCLickRegisterLogin{
+    font-size: 12px;
+}
+
+.loading{
+    width: 12px;
+    animation: spinner 1s infinite linear;
+}
+
+@keyframes spinner {
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}

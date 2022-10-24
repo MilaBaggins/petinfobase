@@ -1,0 +1,51 @@
+.modalDiv3{
+    padding: 25px;
+    min-width: 610px;
+    min-height: 300px;
+    position: fixed;
+    border-radius: 4px;
+    position: absolute;
+    background-color: var(--color-white);
+}
+
+.divEditDeleteModal{
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.infoFeed{
+    margin-bottom: 25px;
+    max-height: 100%;
+}
+
+.postInfoDiv{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#titlePostModal2{
+    display: flex;
+    flex-direction: column;
+}
+
+#pPostoModal2{
+    display: flex;
+    flex-direction: column;
+}
+
+#textePostModal2{
+    color: var(--gray300);
+    word-wrap: break-word;
+    max-width: 100%;
+    overflow:auto;
+    border: solid 1px;
+    border-color: var(--gray600);
+    outline: none;
+    padding: 20px;
+    resize: none;
+    background-color: var(--gray800);
+    border-radius: 4px;
+}

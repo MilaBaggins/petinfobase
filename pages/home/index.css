@@ -1,0 +1,101 @@
+
+.headerDiv{
+    display: flex;
+    justify-content: space-between;
+    height: 110px;
+    align-items: center;
+}
+
+
+.h1PetFeed{
+    font-size: 23px;
+}
+
+#headerButtonImg{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+img{
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+}
+
+.h3FeedDiv{
+    display: flex;
+    align-items: center;
+    background-color: var(--gray800);
+    height: 50px;
+    margin-bottom: 30px;
+}
+
+.h3Feed{
+    margin-left: 370px;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+input{
+    background:none;
+}
+
+#section-posts{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 230px;
+    line-height: 28px;
+    margin: 35px 0px 35px 0px;
+    margin-bottom: 40px;
+
+}
+
+#divPostContainer{
+    padding: 20px;
+    min-height: 300px;
+    border-radius: 4px;
+    width: 1000px;
+    margin-bottom: 20px
+}
+
+.infoFeed{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.postInfoDiv{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#h3TitlePost{
+    margin-bottom: 20px;
+}
+
+.smallPostInfo{
+    font-weight: 500;
+}
+
+.date{
+    width: 55%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.divEditDelete{
+    max-height: 100%;
+    display: flex;
+    gap: 10px;
+    
+}
+
+#pContentPost{
+    font-size: 15px;
+    margin-bottom: 15px;
+}

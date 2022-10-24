@@ -1,0 +1,159 @@
+button{
+    font-family: 'Inter', sans-serif;
+    color: var(--gray200);
+    font-weight: 500;
+    font-size: 12px;
+}
+
+#backToLoginId1{
+    padding: 5px 8px 5px 8px;
+    background:none;
+    border: solid 2px;
+    border-color: var(--gray600);
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#backToLoginId{
+    padding: 8px 8px 8px 8px;
+    background:none;
+    border: solid 2px;
+    border-color: var(--gray600);
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#backToLoginIdRegister{
+    background: none;
+    border-color: var(--gray600);
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 8px 8px 8px 8px;
+}
+
+.button-blue-large{
+    padding: 8px 8px 8px 8px;
+    border-radius: 4px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background-color: var(--brand100);
+    color: var(--color-white);
+    margin-bottom: 25px;
+}
+
+.button-grey-large{
+    padding: 12px 10px 12px 10px;
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
+    color: var(--gray100);
+    font-weight: 600;
+    border: solid 1px;
+    border-color: var(--gray600);
+}
+
+#createPostButton{
+    text-align: center;
+    padding: 8px 20px 8px 20px;
+    margin-bottom: 0px;
+}
+
+#editButton{
+    cursor: pointer;
+    border-radius: 4px;
+    outline: none;
+    border: solid 1.5px var(--gray400);
+    background: transparent;
+    padding: 4px 8px 4px 8px;
+}
+
+#deleteButton{
+    cursor: pointer;
+    border-radius: 4px;
+    outline: var(--gray600);
+    border: none;
+    background: var(--gray600);
+    padding: 5px 10px 5px 10px;
+    color: var(--gray400);
+}
+
+.cancelButton{
+    cursor: pointer;
+    border-radius: 4px;
+    outline: var(--gray600);
+    border: none;
+    background: var(--gray600);
+    padding: 5px 10px 5px 10px;
+    color: var(--gray400);
+}
+
+.publishButton{
+    background-color: var(--brand100);
+    cursor: pointer;
+    border-radius: 4px;
+    outline: none;
+    border: solid 1.5px var(--brand100);
+    padding: 4px 8px 4px 8px;
+    color: var(--color-white);
+}
+
+.confirmDeleteButton{
+    background-color: var(--alert100);
+    cursor: pointer;
+    border-radius: 4px;
+    outline: none;
+    border: solid 1.5px var(--alert100);
+    padding: 4px 8px 4px 8px;
+    color: var(--color-white);
+}
+
+#deleteButton2{
+    cursor: pointer;
+    border-radius: 4px;
+    outline: var(--gray600);
+    border: none;
+    background: var(--gray600);
+    padding: 5px 10px 5px 10px;
+    color: var(--gray400);
+}
+
+#deleteButton3{
+    cursor: pointer;
+    border-radius: 4px;
+    outline: var(--gray600);
+    border: none;
+    background: var(--gray600);
+    padding: 5px 10px 5px 10px;
+    color: var(--gray400);
+}
+
+#deleteButton4{
+    cursor: pointer;
+    border-radius: 4px;
+    outline: var(--gray600);
+    border: none;
+    background: var(--gray600);
+    padding: 5px 10px 5px 10px;
+    color: var(--gray400);
+}
+
+#cancelButtonId{
+    cursor: pointer;
+    border-radius: 4px;
+    outline: var(--gray600);
+    border: none;
+    background: var(--gray600);
+    padding: 5px 10px 5px 10px;
+    color: var(--gray400);
+}
+
+#confirmDeleteButtonId{
+    background-color: var(--alert100);
+    cursor: pointer;
+    border-radius: 4px;
+    outline: none;
+    border: solid 1.5px var(--alert100);
+    padding: 4px 8px 4px 8px;
+    color: var(--color-white);
+}

@@ -1,0 +1,65 @@
+.modalDiv2 {
+    padding: 25px;
+    min-width: 610px;
+    min-height: 300px;
+    position: fixed;
+    border-radius: 4px;
+    position: absolute;
+    background-color: var(--color-white);
+}
+
+.h2PetEditModal{
+    font-size: 18px;
+}
+
+#titlePostoModal{
+    display: flex;
+    flex-direction: column;
+}
+
+
+#pPostoModal{
+    display: flex;
+    flex-direction: column;
+}
+
+.inputModalPost{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    outline: none;
+    padding: 10px;
+    border: solid 1px;
+    border-color: var(--gray600);
+}
+
+.inputModalPost{
+    color: var(--gray300);
+    word-wrap: break-word;
+    max-width: 100%;
+    overflow:auto;
+    background-color: var(--gray800);
+    border-radius: 4px;
+}
+
+#textePostModal{
+    color: var(--gray300);
+    word-wrap: break-word;
+    max-width: 100%;
+    overflow:auto;
+    border: solid 1px;
+    border-color: var(--gray600);
+    outline: none;
+    padding: 20px;
+    resize: none;
+    background-color: var(--gray800);
+    border-radius: 4px;
+}
+
+label {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    font-family: 'Inter', sans-serif;
+    color: var(--gray200);
+}
+
