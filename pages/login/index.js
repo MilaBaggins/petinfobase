@@ -1,5 +1,7 @@
-function createLoginCard() {
+function createLoginCard(wrongPasswordTrue) {
+
     const loginSection = document.getElementById('loginSection')
+    loginSection.innerText = ''
 
     const formCardLogin = document.createElement('div')
     formCardLogin.setAttribute('id', 'cardLogin')
@@ -31,6 +33,19 @@ function createLoginCard() {
     inputPasswordLogin.required = ('true')
     inputPasswordLogin.type = ('password')
 
+    const divAlert = document.createElement('div')
+    divAlert.setAttribute('div', 'divAlertId')
+
+    if (wrongPasswordTrue === true) {
+
+        const alertWrongPasswoord = document.createElement('small')
+        alertWrongPasswoord.innerText = ('A senha está incorreta')
+        alertWrongPasswoord.style.color = ('var(--alert100)')
+
+        divAlert.appendChild(alertWrongPasswoord)
+    }
+
+
     const buttonRegister = document.createElement('button')
     buttonRegister.classList.add('button-blue-large')
     buttonRegister.setAttribute('id', 'acessIdButton')
@@ -58,11 +73,11 @@ function createLoginCard() {
     backToLoginDiv.appendChild(h3BackToLogin)
     divPLogin.append(pIDontHaveAnAccount, pClickRegister)
 
-    formCardLogin.append(backToLoginDiv, emailLabelLogin, inputEmailLogin, passwordLabelLogin, inputPasswordLogin, buttonRegister, divPLogin, buttonBackToLoginRegister)
+    formCardLogin.append(backToLoginDiv, emailLabelLogin, inputEmailLogin, passwordLabelLogin, inputPasswordLogin, divAlert, buttonRegister, divPLogin, buttonBackToLoginRegister)
     loginSection.appendChild(formCardLogin)
 
 }
-createLoginCard()
+createLoginCard(false)
 
 
 const clickAcessar = document.getElementById('acessIdButton')
@@ -93,6 +108,8 @@ async function acess() {
             const body = await result.json()
             localStorage.setItem('token', JSON.stringify(body))
             window.location = '../home/index.html'
+        } else {
+            createLoginCard(true)
         }
     })
 }
@@ -137,3 +154,9 @@ function validationInput() {
     })
 }
 validationInput()
+
+const buttonRegistertoLogin = document.getElementById('backToLoginIdRegister')
+
+buttonRegistertoLogin.addEventListener('click', ()=>{
+    window.location = '../../index.html'
+})

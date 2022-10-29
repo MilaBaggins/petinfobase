@@ -3,6 +3,8 @@
     min-width: 610px;
     min-height: 300px;
     position: fixed;
+    top:30px;
+    left: 370px;
     border-radius: 4px;
     position: absolute;
     background-color: var(--color-white);

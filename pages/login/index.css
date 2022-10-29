@@ -72,3 +72,7 @@ span{
         transform: rotate(360deg);
     }
 }
+
+#acessIdButton{
+    margin-top: 10px;
+}

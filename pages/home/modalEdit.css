@@ -3,8 +3,9 @@
     min-width: 610px;
     min-height: 300px;
     position: fixed;
+    top: 30px;
+    left: 374px;
     border-radius: 4px;
-    position: absolute;
     background-color: var(--color-white);
 }
 
@@ -63,3 +64,13 @@ label {
     color: var(--gray200);
 }
 
+.divButtonsPublishEdit{
+    display: flex;
+}
+
+.divButtonsPublishEdit{
+    display: flex;
+    gap: 13px;
+    justify-content: flex-end;
+    margin-top: 15px;
+}

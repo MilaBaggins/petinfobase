@@ -35,10 +35,8 @@ async function checkUSer() {
 }
 checkUSer()
 
-const postButton = document.getElementById('createPostButton')
-postButton.addEventListener('click', () => {
-    createModal3()
-})
+
+
 
 
 function createPost(item) {
@@ -79,6 +77,11 @@ function createPost(item) {
     buttonEditMain.setAttribute('id', 'editButton')
     buttonEditMain.innerText = ('Editar')
 
+    buttonEditMain.addEventListener('click', () => {
+        editModal2(item)
+    })
+
+
     const buttonDeleteMain = document.createElement('button')
     buttonDeleteMain.setAttribute('id', 'deleteButton')
     buttonDeleteMain.innerText = ('Deletar')
@@ -94,8 +97,13 @@ function createPost(item) {
     const linkPost = document.createElement('a')
     linkPost.setAttribute('id', 'linkPost')
 
-    const smallPostLink = document.createElement('small')
+    const smallPostLink = document.createElement('button')
+    smallPostLink.setAttribute('id', 'buttonAcessPost')
     smallPostLink.innerText = ('Acessar publicação')
+
+    smallPostLink.addEventListener('click', () => {
+        createModal1()
+    })
 
 
     smallPostInfo.appendChild(smallPostInfoStrong)
@@ -120,13 +128,17 @@ function createPost(item) {
     divPostContainer.append(infoFeedMain, h3TitlePostModal, pContentPostMain, linkPost)
 
     sectionPosts.appendChild(divPostContainer)
-
 }
 
+
+
 const sectionModal1 = document.getElementById('modalHome')
+const divModalOpenPost = document.createElement('div')
+divModalOpenPost.classList.add('divModalOpenPost')
 const imgBlackOpacity = document.createElement('img')
 imgBlackOpacity.src = ('../../assets/img/black_background.png')
 imgBlackOpacity.setAttribute('id', 'blackImg')
+
 
 function createModal1() {
 
@@ -163,6 +175,10 @@ function createModal1() {
     buttonDeleteEdit.setAttribute('id', 'deleteButton')
     buttonDeleteEdit.innerText = ('x')
 
+    buttonDeleteEdit.addEventListener('click', () => {
+        divModalOpenPost.remove()
+    })
+
     const h3TitlePostModal = document.createElement('h3')
     h3TitlePostModal.setAttribute('id', 'h3TitlePostModal')
     h3TitlePostModal.innerText = ('Outubro Rosa: Detalhes sobre a importância da prevenção do câncer de mama em cadelas e gatas')
@@ -177,12 +193,12 @@ function createModal1() {
     editDeleteDiv.appendChild(buttonDeleteEdit)
     infoFeedDiv.append(infoFeedDivPost, dateModal, editDeleteDiv)
     modalDivContainer.append(infoFeedDiv, h3TitlePostModal, pContentPostModal)
-    sectionModal1.append(imgBlackOpacity, modalDivContainer)
+    divModalOpenPost.append(imgBlackOpacity, modalDivContainer)
+    sectionModal1.appendChild(divModalOpenPost)
 }
-/* createModal1() */
 
 
-function createModal2() {
+function editModal2(item) {
 
     const modalDiv2 = document.createElement('div')
     modalDiv2.classList.add('modalDiv2')
@@ -205,6 +221,10 @@ function createModal2() {
     deleteButton2.setAttribute('id', 'deleteButton2')
     deleteButton2.innerText = ('x')
 
+    deleteButton2.addEventListener('click', () => {
+        divModalOpenPost.remove()
+    })
+
     const titlePostoModal = document.createElement('div')
     titlePostoModal.setAttribute('id', 'titlePostoModal')
 
@@ -215,29 +235,79 @@ function createModal2() {
     inputmodalTitle.setAttribute('id', 'inputTextModal')
     inputmodalTitle.classList.add('inputModalPost')
     inputmodalTitle.type = ('text')
+    inputmodalTitle.value = (item.title)
 
     const pPostoModal = document.createElement('div')
     pPostoModal.setAttribute('id', 'pPostoModal')
 
     const articleLabel = document.createElement('label')
-    articleLabel.innerText = ('Post')
+    articleLabel.innerText = ('Conteúdo do post')
 
     const articleLabelTexteArea = document.createElement('textarea')
     articleLabelTexteArea.setAttribute('id', 'textePostModal')
     articleLabelTexteArea.name = ('text')
     articleLabelTexteArea.cols = ('30')
     articleLabelTexteArea.rows = ('10')
+    articleLabelTexteArea.value = (item.content)
+
+    const divButtonsPublishEdit = document.createElement('div')
+    divButtonsPublishEdit.classList.add('divButtonsPublishEdit')
+
+    const cancelButtonIdEdit = document.createElement('button')
+    cancelButtonIdEdit.setAttribute('id', 'cancelButtonId2Edit')
+    cancelButtonIdEdit.classList.add('cancelButton')
+    cancelButtonIdEdit.innerText = ('Cancelar');
+
+    cancelButtonIdEdit.addEventListener('click', () => {
+        divModalOpenPost.remove()
+    })
+
+    const publishButtonIdEdit = document.createElement('button')
+    publishButtonIdEdit.setAttribute('id', 'publishButtonIdEdit')
+    publishButtonIdEdit.classList.add('publishButton')
+    publishButtonIdEdit.innerText = ('Salvar alterações');
+
+    publishButtonIdEdit.addEventListener('click', async () => {
+        const checkToken = localStorage.getItem('token')
+        const jasonParse = JSON.parse(checkToken)
+        console.log(articleLabelTexteArea.value)
+
+        const result = await fetch(`http://localhost:3333/posts/${item.id}`, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${jasonParse.token}`
+            },
+            body: JSON.stringify({
+
+                "title": inputmodalTitle.value,
+                "content": articleLabelTexteArea.value
+            })
+        })
+        if (result.status === 200){
+            window.location = 'index.html'
+        }
+    })
+
 
     postInfoDiv2.appendChild(h2PetEditModal)
     divEditDelete2.appendChild(deleteButton2)
     infoFeed2.append(postInfoDiv2, divEditDelete2)
     titlePostoModal.append(postLabel, inputmodalTitle)
     pPostoModal.append(articleLabel, articleLabelTexteArea)
-    modalDiv2.append(infoFeed2, titlePostoModal, pPostoModal)
-    sectionModal1.append(imgBlackOpacity, modalDiv2)
+    divButtonsPublishEdit.append(cancelButtonIdEdit, publishButtonIdEdit)
+    modalDiv2.append(infoFeed2, titlePostoModal, pPostoModal, divButtonsPublishEdit)
+    divModalOpenPost.append(imgBlackOpacity, modalDiv2)
+    sectionModal1.appendChild(divModalOpenPost)
 }
-/* createModal2() */
+/* EditModal2() */
 
+
+
+const postButton = document.getElementById('createPostButton')
+postButton.addEventListener('click', () => {
+    createModal3()
+})
 
 function createModal3() {
     const modalDiv3 = document.createElement('div')
@@ -260,6 +330,11 @@ function createModal3() {
     const deleteButton3 = document.createElement('button')
     deleteButton3.setAttribute('id', 'deleteButton3')
     deleteButton3.innerText = ('x');
+
+    deleteButton3.addEventListener('click', () => {
+        divModalOpenPost.remove()
+    })
+
 
     const titlePostoModal2 = document.createElement('div')
     titlePostoModal2.setAttribute('id', 'titlePostModal2')
@@ -291,6 +366,11 @@ function createModal3() {
     cancelButtonId2.setAttribute('id', 'cancelButtonId2')
     cancelButtonId2.classList.add('cancelButton')
     cancelButtonId2.innerText = ('Cancelar');
+
+    cancelButtonId2.addEventListener('click', () => {
+        divModalOpenPost.remove()
+    })
+
 
     const publishButtonId = document.createElement('button')
     publishButtonId.setAttribute('id', 'publishButtonId')
@@ -328,7 +408,8 @@ function createModal3() {
     pPostoModal2.append(articleLabel2, articleLabelTexteArea2)
     divEditDeleteModalClass.append(cancelButtonId2, publishButtonId)
     modalDiv3.append(infoFeed3, titlePostoModal2, pPostoModal2, divEditDeleteModalClass)
-    sectionModal1.append(imgBlackOpacity, modalDiv3)
+    divModalOpenPost.append(imgBlackOpacity, modalDiv3)
+    sectionModal1.appendChild(divModalOpenPost)
 }
 /* createModal3() */
 
@@ -394,7 +475,9 @@ function createModalDelete(item) {
         })
 
         if (deleteResult.status === 200) {
-            window.location = 'index.html'
+            setTimeout(() => window.location = 'index.html', 2500)
+            renderDeletePost()
+            
         }
     })
 
@@ -407,3 +490,34 @@ function createModalDelete(item) {
 
 }
 /* createModal4() */
+
+function renderDeletePost() {
+    const sectionDeletePost = document.getElementById('section-alert-delete-account')
+
+    const divAlertCardDelete = document.createElement('div')
+    divAlertCardDelete.classList.add('div-alert-card')
+
+    const divAlertDelete = document.createElement('div')
+    divAlertDelete.classList.add('div-alert')
+
+    const divCheckDelete = document.createElement('div')
+    divCheckDelete.classList.add('check')
+
+    const imgAlertDelete = document.createElement('img')
+    imgAlertDelete.src = ('../../assets/img/check.png')
+    imgAlertDelete.classList.add('img-check')
+
+    const pCheckPDelete = document.createElement('p')
+    pCheckPDelete.classList.add('check-p')
+    pCheckPDelete.innerText = ('Post deletado com sucesso!')
+
+    const pcheckTextDelete = document.createElement('p')
+    pcheckTextDelete.classList.add('check-text')
+    pcheckTextDelete.innerText = ('O post selecionado para exlusão foi deletado, a partir de agora não aparecerá no seu feed')
+
+    divCheckDelete.appendChild(imgAlertDelete)
+    divAlertDelete.append(divCheckDelete, pCheckPDelete)
+    divAlertCardDelete.append(divAlertDelete, pcheckTextDelete)
+    sectionDeletePost.appendChild(divAlertCardDelete)
+
+}

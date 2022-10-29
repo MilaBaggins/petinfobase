@@ -4,7 +4,7 @@
     min-height: 255px;
     position: fixed;
     border-radius: 4px;
-    position: absolute;
+    position: fixed;
     background-color: var(--color-white);
 }
 

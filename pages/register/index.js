@@ -1,9 +1,10 @@
-function createCardRegister() {
+function createCardRegister(wrongRegisterTrue) {
     const sectionRegistration = document.getElementById('registrationSection')
+    sectionRegistration.innerText = ''
 
     const form = document.createElement('div')
     form.setAttribute('id', 'card')
-
+    
     const h3BackToLogin = document.createElement('div')
     h3BackToLogin.classList.add('h3BacktoLogin')
 
@@ -61,16 +62,28 @@ function createCardRegister() {
     buttonRegister.innerText = ('Cadastrar')
     buttonRegister.disabled = true
 
+    const divAlert = document.createElement('div')
+    divAlert.setAttribute('div', 'divAlertIdRegister')
+
+    if (wrongRegisterTrue === true) {
+
+        const alertWrongPasswoord = document.createElement('small')
+        alertWrongPasswoord.innerText = ('Usuário existente')
+        alertWrongPasswoord.style.color = ('var(--alert100)')
+
+        divAlert.appendChild(alertWrongPasswoord)
+    }
+
     const buttonBackToLogin2 = document.createElement('button')
     buttonBackToLogin2.classList.add('button-grey-large')
     buttonBackToLogin2.setAttribute('id', 'backToLoginId')
     buttonBackToLogin2.innerText = ('Voltar para o login')
 
     h3BackToLogin.append(h3Registration, buttonBackToLogin)
-    form.append(h3BackToLogin, userLabel, userInput, emailLabel, inputEmail, labelLinkImg, inputLinkImg, passwordLabel, inputPassword, buttonRegister, buttonBackToLogin2)
+    form.append(h3BackToLogin, userLabel, userInput, emailLabel, inputEmail, labelLinkImg, inputLinkImg, passwordLabel, inputPassword, buttonRegister, divAlert, buttonBackToLogin2)
     sectionRegistration.appendChild(form)
 }
-createCardRegister()
+createCardRegister(false)
 
 function getInfoRegister() {
     const userRegister = document.getElementById('userInput')
@@ -96,7 +109,7 @@ function getInfoRegister() {
 const clickregister = document.getElementById('acessIdButton')
 function register() {
     const registerButton = document.getElementById('registrationIdButton')
-    
+
 
     registerButton.addEventListener('click', async () => {
         registerButton.innerHTML = ''
@@ -116,8 +129,11 @@ function register() {
             body: JSON.stringify(getInfoRegisterReturn),
         })
         console.log(resultRegister)
-        if (resultRegister.status === 200){
-            window.location = 'pages/login/index.html'
+        if (resultRegister.status === 200) {
+           setTimeout(() => window.location = 'pages/login/index.html', 2500)
+            renderSuccesTooltip()
+        } else {
+            createCardRegister(true)
         }
     })
 }
@@ -132,7 +148,7 @@ function validationInputRegister() {
 
     validUserRegister.addEventListener('input', () => {
 
-        if (validUserRegister.value === '' || validEmailInputRegister.value === '' || validImgLink.value === '' || validpasswordInputRegister.value === '' ){
+        if (validUserRegister.value === '' || validEmailInputRegister.value === '' || validImgLink.value === '' || validpasswordInputRegister.value === '') {
             buttonRegisterDisable.disabled = true
         } else {
             buttonRegisterDisable.disabled = false
@@ -142,7 +158,7 @@ function validationInputRegister() {
 
     validEmailInputRegister.addEventListener('input', () => {
 
-        if (validUserRegister.value === '' || validEmailInputRegister.value === '' || validImgLink.value === '' || validpasswordInputRegister.value === '' ){
+        if (validUserRegister.value === '' || validEmailInputRegister.value === '' || validImgLink.value === '' || validpasswordInputRegister.value === '') {
             buttonRegisterDisable.disabled = true
         } else {
             buttonRegisterDisable.disabled = false
@@ -152,7 +168,7 @@ function validationInputRegister() {
 
     validImgLink.addEventListener('input', () => {
 
-        if (validUserRegister.value === '' || validEmailInputRegister.value === '' || validImgLink.value === '' || validpasswordInputRegister.value === '' ){
+        if (validUserRegister.value === '' || validEmailInputRegister.value === '' || validImgLink.value === '' || validpasswordInputRegister.value === '') {
             buttonRegisterDisable.disabled = true
         } else {
             buttonRegisterDisable.disabled = false
@@ -162,7 +178,7 @@ function validationInputRegister() {
 
     validpasswordInputRegister.addEventListener('input', () => {
 
-        if (validUserRegister.value === '' || validEmailInputRegister.value === '' || validImgLink.value === '' || validpasswordInputRegister.value === '' ){
+        if (validUserRegister.value === '' || validEmailInputRegister.value === '' || validImgLink.value === '' || validpasswordInputRegister.value === '') {
             buttonRegisterDisable.disabled = true
         } else {
             buttonRegisterDisable.disabled = false
@@ -171,3 +187,56 @@ function validationInputRegister() {
     })
 }
 validationInputRegister()
+
+
+function renderSuccesTooltip() {
+    const sectionCreateAccount = document.getElementById('section-alert-create-account')
+
+    const divAlertCard = document.createElement('div')
+    divAlertCard.classList.add('div-alert-card')
+
+    const divAlert = document.createElement('div')
+    divAlert.classList.add('div-alert')
+
+    const divCheck = document.createElement('div')
+    divCheck.classList.add('check')
+
+    const imgAlert = document.createElement('img')
+    imgAlert.src = ('./assets/img/check.png')
+
+    const pCheckP = document.createElement('p')
+    pCheckP.classList.add('check-p')
+    pCheckP.innerText = ('Sua conta foi criada com sucesso!')
+
+    const pcheckText = document.createElement('p')
+    pcheckText.classList.add('check-text')
+    pcheckText.innerText = ('Agora você pode acessar os conteúdos utilizando seu usuário e senha na página de login: ')
+
+    const aLinkLogin = document.createElement('a')
+    aLinkLogin.setAttribute('id', 'link-para-login')
+    aLinkLogin.href = ('www.google.com')
+    aLinkLogin.innerText = ('Acessar página de login')
+
+    divCheck.appendChild(imgAlert)
+    pcheckText.appendChild(aLinkLogin)
+    divAlert.append(divCheck, pCheckP)
+    divAlertCard.append(divAlert, pcheckText)
+    sectionCreateAccount.appendChild(divAlertCard)
+
+}
+
+const buttonBackToLogin = document.getElementById('backToLoginId')
+const backToLoginId1 = document.getElementById('backToLoginId1')
+
+buttonBackToLogin.addEventListener('click', ()=>{
+    window.location = 'pages/login/index.html'
+})
+
+backToLoginId1.addEventListener('click', ()=>{
+    window.location = 'pages/login/index.html'
+})
+
+
+
+
+

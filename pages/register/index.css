@@ -50,12 +50,16 @@ input {
     border: solid 2px;
     border-color: var(--gray600);
     background-color: var(--gray700);
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
 ::placeholder {
     font-family: 'Inter', sans-serif;
     color: var(--gray400);
+}
+
+#registrationIdButton{
+    margin-bottom: 10px;
 }
 
 #logoImgInfo {
@@ -117,4 +121,37 @@ input {
     100%{
         transform: rotate(360deg);
     }
+}
+
+.div-alert-card{
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 400px;
+    padding: 20px;
+    box-shadow: 0px 4px 30px -10px rgb(141, 141, 141);
+    background-color: var(--color-white);
+    border-radius: 8px;
+    
+}
+
+.div-alert{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--sucess100);
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.check{
+    background-color: var(--sucess100);
+    padding: 4px 8px;
+    border-radius: 100%;
+    align-content: center;
+}
+
+p{
+    font-size: 14px;
+    line-height: 20px;
 }

@@ -99,3 +99,40 @@ input{
     font-size: 15px;
     margin-bottom: 15px;
 }
+
+.div-alert-card{
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 400px;
+    padding: 20px;
+    box-shadow: 0px 4px 30px -10px rgb(141, 141, 141);
+    background-color: var(--color-white);
+    border-radius: 8px;
+}
+
+.div-alert{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--sucess100);
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.check{
+    background-color: var(--sucess100);
+    padding: 4px 8px;
+    border-radius: 100%;
+    align-content: center;
+}
+
+.img-check{
+    width: 12px;
+    height: 13px;
+}
+
+p{
+    font-size: 14px;
+    line-height: 20px;
+}
